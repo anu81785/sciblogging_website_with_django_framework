@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{post.title}} | {% endblock %}
+
+{% block content %}
+
+
+<div class="blog_detail">
+    <div class="container_detail">
+        <h3>admin | {{post.created_at|date:'m-d-Y H:i'}}</h3>
+        <h1>{{post.title}}</h1>
+        <p>{{post.intro}}</p>
+        <p>{{post.body|safe}}</p>
+        <h2>Comments</h2>
+        <form class="my-form" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="field">
+                <button class="submit_button">Submit Comment</button>
+            </div>
+        </form>
+        {% for comment in post.comments.all %}
+            <article class="media">
+                <div class="media-content">
+                    <strong class="comment_name">{{comment.name}}</strong> <small class="comment_date">{{comment.created_at}}</small><br>
+                    {{comment.body}}
+                    <hr>
+                </div>
+            </article>
+        {% endfor%}
+    </div>
+</div>
+
+{% endblock %}

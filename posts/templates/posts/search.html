@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% block title %}Search |{% endblock %}
+
+{% block content %}
+<div class="search_title">
+    <h1>Search Results</h1>
+    <h2>Query:  "{{ query }}"</h2>
+</div>
+{% for post in posts %}
+    <div class="blog_post">
+        <div class="container_copy">
+            <a href="{% url 'post_detail' post.slug %}">
+                <h3>{{post.created_at|date:'m-d-Y H:i'}}</h3>
+                <h1>{{post.title}}</h1>
+                <p>{{post.intro}}</p>
+                <a href="{% url 'post_detail' post.slug %}" class="btn_primary" target="_blank">Read More</a>
+            </a>
+        </div>
+    </div>
+{% empty %}
+    <div class="empty_content">
+        <p>No result for the given query....</p>
+    </div>
+{% endfor %}  
+
+{% endblock %}
