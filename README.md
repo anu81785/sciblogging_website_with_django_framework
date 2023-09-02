@@ -28,4 +28,6 @@ This is a scientific blogging website which adds a richtexteditor integrated wit
    * python manage.py migrate
    
    * python manage.py runserver
+   ![Screenshot from 2023-09-01 17-20-16](https://github.com/anu81785/brain_tumor_classification_into_17_classes/assets/89373629/3de9c5eb-f486-4af3-b1be-61d97c5df148)
 
+* Open the url http://127.0.0.1:8000 in your browser
