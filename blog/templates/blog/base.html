@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <!--------- <title>Responsive Navigation Menu</title>------>
+    <title>{% block title %}{% endblock %} Physics blog</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/blog/style.css' %}">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Fusion and Plasmas</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li>
+            <form method="get" action="{% url 'search' %}">
+              <div class="search">
+                <input type="text" name="query" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </li>
+          <li><a href="/">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <video autoplay muted loop id="myVideo">
+        <source src="/static/blog/video/background.mp4" type="video/mp4">
+      </video>
+      <div class="body-content">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer">
+          <h1> Fusion and Plasmas</h1>
+            <p>
+              Fusion and Plasmas is a scientific blogging website to help the students in the research field of plasma physics and scientific computing.
+            </p>
+      </div>
+    </footer>
+
+  </body>
+</html>

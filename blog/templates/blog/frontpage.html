@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block title %}Home |{% endblock %}
+{% block content %}
+
+{% for post in all_posts %}
+  <div class="blog_post">
+    <div class="container_copy">
+      <h3>admin | {{post.created_at|date:'m-d-Y H:i'}}</h3>
+      <h1>{{post.title}}</h1>
+      <p>{{post.intro}}</p>
+      <a href="{% url 'post_detail' post.slug %}" class="btn_primary" target="_blank">Read More</a>
+    </div>
+  </div>
+{% endfor %}
+{% endblock %}

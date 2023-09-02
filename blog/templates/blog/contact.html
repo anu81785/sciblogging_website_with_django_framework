@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+{% block title %}Contact |{% endblock %}
+{% block content %}
+{% for item in items %}
+    <div class="contact">
+        <div class="container_contact">
+            <h1>{{ item.title}}</h1>
+            <p>{{ item.body|safe}}</p>
+            {% if item.address %}
+            <div class="icon">
+                <i class="fa fa-home"></i>
+                <p>{{ item.address }}</p>
+            </div>
+            {% endif %}
+            {% if item.number %}
+            <div class="icon">
+                <i class="fa fa-phone"></i>
+                <p>{{ item.number }}</p>
+            </div>
+            {% endif %}
+            {% if item.email %}
+            <div class="icon">
+                <i class="fa fa-envelope"></i>
+                <p>{{ item.email }}</p>
+            </div>
+            {% endif %}
+            {% if item.linkedin_url %}
+            <div class="icon">
+                <i class="fab fa-linkedin-in"></i>
+                <a href="{{ item.linkedin_url}}"><p>{{ item.linkedin_url}}</p></a>
+            </div>
+            {% endif %}
+            <p>{{ item.footer }}</p>
+        </div>
+    </div>              
+{% endfor %}
+{% endblock %}
