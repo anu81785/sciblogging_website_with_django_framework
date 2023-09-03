@@ -36,3 +36,7 @@ This is a scientific blogging website which adds a richtexteditor integrated wit
 
   ![frontpage](https://github.com/anu81785/sciblogging_website_with_django_framework/assets/89373629/f121d3e1-1403-488b-a0e2-152ba33008d1)
 
+* To watch the videos of website walkthrough, go to the link below:
+  
+   * https://github.com/anu81785/sciblogging_website_with_django_framework/tree/main/demo-videos
+
